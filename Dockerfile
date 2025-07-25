@@ -9,7 +9,8 @@ RUN apk update && \
 ## Second stage: Use lightweight BusyBox image for final runtime environment
 # FROM busybox:1.37.0-musl
 # OCP-POWER Update Dockerfile - comment busybox above and the the minimal image below
-FROM registry.access.redhat.com/ubi8/ubi-minimal
+# FROM registry.access.redhat.com/ubi8/ubi-minimal
+FROM registry.access.redhat.com/ubi8/ubi
 
 
 # Define non-root user UID and GID

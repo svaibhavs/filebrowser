@@ -7,8 +7,9 @@ RUN apk update && \
     wget -O /JSON.sh https://raw.githubusercontent.com/dominictarr/JSON.sh/0d5e5c77365f63809bf6e77ef44a1f34b0e05840/JSON.sh
 
 ## Second stage: Use lightweight BusyBox image for final runtime environment
-FROM busybox:1.37.0-musl
-
+## CHANGE - OCP-POWER registry-access
+#FROM busybox:1.37.0-musl
+FROM registry.access.redhat.com/ubi8/ubi-minimal
 # Define non-root user UID and GID
 ENV UID=1000
 ENV GID=1000
